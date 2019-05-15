@@ -1,0 +1,11 @@
+{
+    "xml.fileAssociations": [
+        {
+            "systemId": "/Users/jeremyjackson/myfirstapp/schema/tns.xsd",
+            "pattern": "**/**/*.xml"
+        }
+    ],
+    "files.exclude": {
+        "schema": true
+    }
+}
