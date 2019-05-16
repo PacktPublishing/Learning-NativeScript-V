@@ -31,11 +31,21 @@
 </template>
 
 <script>
+    import * as applicationSettings from 'tns-core-modules/application-settings'
+
     export default {
         data() {
             return {
                 todos: [] //Todos Array
             }
+        },
+        watch: {
+            todos: function(newTodos,oldTodos) {
+                applicationSettings.setString("todos",JSON.stringify(this.todos));
+            }
+        },
+        created() {
+            this.todos = JSON.parse(applicationSettings.getString('todos','[]'));
         },
         methods: {
             addTodo() {
