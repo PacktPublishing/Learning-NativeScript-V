@@ -1,17 +1,14 @@
 <template>
     <Page>
         <ActionBar title="My Todo">
-            <ActionItem
-                @tap="addTodo"
-                ios.systemIcon="4"
-                ios.position="right"
-                android.systemIcon="ic_menu_add"
-                android.position="actionBar"></ActionItem>
+            
         </ActionBar>
         <TabView>
             <TabViewItem title="Todo">
-                <StackLayout>
-                    <ListView for="todo in todos">
+                <GridLayout rows="auto,*">
+                    <ListView 
+                        row="1"
+                        for="todo in todos">
                         <v-template>
                             <GridLayout
                                 columns="*,50">
@@ -28,7 +25,12 @@
                             </GridLayout>
                         </v-template>
                     </ListView>
-                </StackLayout>
+                    <Fab
+                        @tap="addTodo"
+                        row="1"
+                        icon="~/Images/ic_add_white.png"
+                        class="fab-button" />
+                </GridLayout>
             </TabViewItem>
             <TabViewItem title="Movies">
                 <StackLayout>
@@ -78,6 +80,12 @@
     import * as applicationSettings from 'tns-core-modules/application-settings'
     import * as http from 'http';
     import * as utils from 'tns-core-modules/utils/utils';
+    import Vue from 'nativescript-vue';
+
+    Vue.registerElement(
+        'Fab',
+        () => require('nativescript-floatingactionbutton').Fab
+    );
 
     export default {
         data() {
@@ -176,5 +184,12 @@
     }
     .red {
         color:red;
+    }
+    .fab-button {
+        height: 70;
+        width: 70;
+        margin: 15;
+        vertical-align: bottom;
+        horizontal-align: right;
     }
 </style>
