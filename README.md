@@ -35,4 +35,4 @@ Vue.JS <br/>
 
 * [Getting Started with NativeScript](https://www.packtpub.com/web-development/getting-started-nativescript)
 
-* [NativeScript for Angular Mobile Development](https://www.packtpub.com/web-development/nativescript-angular-mobile-development
+* [NativeScript for Angular Mobile Development](https://www.packtpub.com/web-development/nativescript-angular-mobile-development)
